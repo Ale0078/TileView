@@ -15,6 +15,10 @@ namespace TileView
 {
     public class TileView : Grid
     {
+        private static readonly Color GROUP_NAME_COLOR = Color.FromRgb(255, 255, 255);
+        private static readonly int GROUP_NAME_FONT_SIZE = 28;
+        private static readonly FontWeight GROUP_NAME_FONT_WEIGHT = FontWeights.Bold;
+
         private bool _isPageSetted;
 
         private Point _tileToMoveOffset;
@@ -125,7 +129,10 @@ namespace TileView
                 {
                     TextBlock text = new TextBlock
                     {
-                        Text = dialog.Text
+                        Text = dialog.Text,
+                        Foreground = new SolidColorBrush(GROUP_NAME_COLOR),
+                        FontSize = GROUP_NAME_FONT_SIZE,
+                        FontWeight = GROUP_NAME_FONT_WEIGHT
                     };
 
                     TileGrid tiles = new TileGrid();
